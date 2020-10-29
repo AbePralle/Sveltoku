@@ -107,5 +107,7 @@ surge public my-project.surge.sh
 # Log
 ```
 npx degit sveltejs/template Sveltoku --force
+cd Sveltoku
+npm install
 ```
 

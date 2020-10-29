@@ -1,30 +1,49 @@
 <script>
-	export let name;
+  let one_to_nine = [1,2,3,4,5,6,7,8,9];
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<table class="SudokuGrid">
+  {#each one_to_nine as row}
+    <tr>
+    {#each one_to_nine as column}
+      <td></td>
+    {/each}
+    </tr>
+  {/each}
+</table>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  table.SudokuGrid
+  {
+    font-size:24pt;
+    text-align:center;
+    color:black;
+    border:1pt black solid;
+    width:324pt;
+    height:324pt;
+    padding:0;
+    margin:0;
+    background-color:white;
+    border-collapse:collapse;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  table.SudokuGrid tr td
+  {
+    width:36pt;
+    height:36pt;
+    border:1pt black solid;
+    background-color:white;
+    padding:0;
+    margin:0;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  table.SudokuGrid tr td:nth-child(3), table.SudokuGrid tr td:nth-child(6)
+  {
+    border-right:3pt black solid;
+  }
+
+  table.SudokuGrid tr:nth-child(3), table.SudokuGrid tr:nth-child(6)
+  {
+    border-bottom:3pt black solid;
+  }
 </style>
